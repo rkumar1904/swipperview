@@ -1,7 +1,7 @@
 name: swipperview
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: a simple swipper
+version: 0.0.1+1
+homepage: https://github.com/rkumar1904
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
