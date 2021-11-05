@@ -1,9 +1,31 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:palette_generator/palette_generator.dart';
+import 'package:swipperview/swipper_model/swipper_model.dart';
 
 class Swipper extends StatefulWidget {
-  const Swipper({Key? key}) : super(key: key);
+  final int itemCount;
+  final String bgURL;
+  final ValueChanged<int>? onChange;
+  final String title;
+  final String description;
+  final String actionName;
+  final VoidCallback actionHandler;
+  final IconData icon;
+  // final SwipperModel data = SwipperModel.fromJson(json);
+  final List<Map<String, dynamic>> data;
+  const Swipper({
+    Key? key,
+    required this.itemCount,
+    required this.onChange,
+    this.bgURL: 'https://source.unsplash.com/collection/345710/640x960',
+    required this.title,
+    required this.description,
+    required this.actionName,
+    required this.actionHandler,
+    required this.icon,
+    required this.data,
+  }) : super(key: key);
 
   @override
   _SwipperState createState() => _SwipperState();
@@ -13,7 +35,7 @@ class _SwipperState extends State<Swipper> {
   PageController controller = PageController(initialPage: 0);
   var imgURL = 'https://source.unsplash.com/collection/345710/640x960?' +
       Random().nextInt(1000).toString();
-  bool isDarkColor = true;
+  bool isDarkColor = false;
   Color dynamicColor = Color(0xfff2f2f2);
   Future<Color> getImagePalette(ImageProvider imageProvider) async {
     final PaletteGenerator paletteGenerator =
@@ -34,7 +56,6 @@ class _SwipperState extends State<Swipper> {
 
   @override
   Widget build(BuildContext context) {
-    print('kToolbarHeight $kToolbarHeight');
     return Scaffold(
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
@@ -45,16 +66,17 @@ class _SwipperState extends State<Swipper> {
       body: PageView.builder(
         controller: controller,
         scrollDirection: Axis.vertical,
-        itemCount: 150,
+        itemCount: widget.data.length,
         onPageChanged: (currentPage) async {
           print('current page $currentPage');
           var url = 'https://source.unsplash.com/collection/345710/' +
               Random().nextInt(1000).toString();
-          Color cc = await getImagePalette(NetworkImage(url));
+          Color cc = await getImagePalette(NetworkImage(widget.bgURL));
           setState(() {
-            imgURL = url;
+            imgURL = widget.bgURL;
             dynamicColor = cc;
           });
+          widget.onChange!(currentPage);
         },
         itemBuilder: (context, index) {
           return Container(
@@ -62,7 +84,7 @@ class _SwipperState extends State<Swipper> {
               color: Colors.white,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(imgURL),
+                image: NetworkImage(widget.data[index]['url'].toString()),
                 // colorFilter: ColorFilter.linearToSrgbGamma(),
               ),
             ),
@@ -98,13 +120,15 @@ class _SwipperState extends State<Swipper> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Icon(
-                            Icons.ac_unit,
+                            widget.icon,
                             size: 50,
                             color:
                                 isDarkColor ? Colors.white54 : Colors.black54,
                           ),
+                          // widget.icon,
+
                           Text(
-                            'Product of the Day',
+                            widget.title,
                             style: TextStyle(
                               fontSize: 25,
                               color:
@@ -113,7 +137,7 @@ class _SwipperState extends State<Swipper> {
                             ),
                           ),
                           Text(
-                            'photo_card_swiper is a photo slider resembling card stack. Card comprises options to reflect like, dislike and favorite feature. The card elements are highly customisable. This layout is quite common in social media apps like Instagram, tinder etc ',
+                            widget.description,
                             style: TextStyle(
                               fontSize: 18,
                               color:
@@ -123,14 +147,14 @@ class _SwipperState extends State<Swipper> {
                           ),
                           Center(
                             child: ElevatedButton.icon(
-                              onPressed: () {},
+                              onPressed: widget.actionHandler,
                               icon: Icon(
                                 Icons.shopping_bag_outlined,
                                 color: isDarkColor
                                     ? Colors.white54
                                     : Colors.black54,
                               ),
-                              label: Text('Buy Now',
+                              label: Text(widget.actionName,
                                   style: TextStyle(
                                     color: isDarkColor
                                         ? Colors.white54
