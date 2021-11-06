@@ -4,23 +4,15 @@ import 'package:palette_generator/palette_generator.dart';
 import 'package:swipperview/swipper_model/swipper_model.dart';
 
 class Swipper extends StatefulWidget {
-  final int itemCount;
-  final String bgURL;
   final ValueChanged<int>? onChange;
-  final String title;
-  final String description;
   final String actionName;
-  final VoidCallback actionHandler;
+  final ValueChanged<int>? actionHandler;
   final IconData icon;
   // final SwipperModel data = SwipperModel.fromJson(json);
   final List<Map<String, dynamic>> data;
   const Swipper({
     Key? key,
-    required this.itemCount,
     required this.onChange,
-    this.bgURL: 'https://source.unsplash.com/collection/345710/640x960',
-    required this.title,
-    required this.description,
     required this.actionName,
     required this.actionHandler,
     required this.icon,
@@ -69,14 +61,15 @@ class _SwipperState extends State<Swipper> {
         itemCount: widget.data.length,
         onPageChanged: (currentPage) async {
           print('current page $currentPage');
-          var url = 'https://source.unsplash.com/collection/345710/' +
-              Random().nextInt(1000).toString();
-          Color cc = await getImagePalette(NetworkImage(widget.bgURL));
+          // var url = 'https://source.unsplash.com/collection/345710/' +
+          //     Random().nextInt(1000).toString();
+          Color cc = await getImagePalette(
+              NetworkImage(widget.data[currentPage]['url']));
           setState(() {
-            imgURL = widget.bgURL;
+            imgURL = widget.data[currentPage]['url'].toString();
             dynamicColor = cc;
           });
-          widget.onChange!(currentPage);
+          // widget.onChange!(currentPage);
         },
         itemBuilder: (context, index) {
           return Container(
@@ -128,7 +121,7 @@ class _SwipperState extends State<Swipper> {
                           // widget.icon,
 
                           Text(
-                            widget.title,
+                            widget.data[index]['title'].toString(),
                             style: TextStyle(
                               fontSize: 25,
                               color:
@@ -137,7 +130,7 @@ class _SwipperState extends State<Swipper> {
                             ),
                           ),
                           Text(
-                            widget.description,
+                            widget.data[index]['description'].toString(),
                             style: TextStyle(
                               fontSize: 18,
                               color:
@@ -147,7 +140,9 @@ class _SwipperState extends State<Swipper> {
                           ),
                           Center(
                             child: ElevatedButton.icon(
-                              onPressed: widget.actionHandler,
+                              onPressed: () {
+                                widget.actionHandler!(index);
+                              },
                               icon: Icon(
                                 Icons.shopping_bag_outlined,
                                 color: isDarkColor
