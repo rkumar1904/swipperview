@@ -1,6 +1,6 @@
-# swipperview
+# Swipperview 🎉
 
-A new Flutter package project.
+<img src="https://github.com/rkumar1904/swipperview/raw/master/assets/vid.gif" height="300" />
 
 ## Getting Started
 
@@ -52,11 +52,12 @@ List<Map<String, dynamic>> productList = [
 
 ```
 
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github.com/rkumar1904/swipperview/raw/master/assets/vid.gif?raw=true)
 
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github.com/rkumar1904/swipperview/raw/master/assets/1.png?raw=true)
 
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 37 26](https://github.com/rkumar1904/swipperview/raw/master/assets/2.png?raw=true)
+<img src="https://github.com/rkumar1904/swipperview/raw/master/assets/1.png?raw=true" height="400" />
+<img src="https://github.com/rkumar1904/swipperview/raw/master/assets/2.png?raw=true" height="400" />
+
+
 
 This project is a starting point for a Dart
 [package](https://flutter.dev/developing-packages/),
