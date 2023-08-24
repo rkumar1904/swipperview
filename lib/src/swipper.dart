@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:palette_generator/palette_generator.dart';
-import 'package:swipperview/swipper_model/swipper_model.dart';
 
 class Swipper extends StatefulWidget {
   final ValueChanged<int>? onChange;
   final String actionName;
   final ValueChanged<int>? actionHandler;
   final IconData icon;
-  // final SwipperModel data = SwipperModel.fromJson(json);
+
   final List<Map<String, dynamic>> data;
   const Swipper({
     Key? key,
@@ -156,7 +155,7 @@ class _SwipperState extends State<Swipper> {
                                         : Colors.black54,
                                   )),
                               style: ElevatedButton.styleFrom(
-                                primary: isDarkColor
+                                backgroundColor: isDarkColor
                                     ? dynamicColor.withOpacity(0.5)
                                     : dynamicColor.withAlpha(100),
                               ),
