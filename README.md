@@ -52,7 +52,7 @@ List<Map<String, dynamic>> productList = [
 
 ```
 
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github.com/rkumar1904/swipperview/assets/9571732/c9a28add-f487-4488-a38e-42eb7b692d3c)
+![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github.com/rkumar1904/swipperview/assets/1.png)
 ![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 37 26](https://github.com/rkumar1904/swipperview/assets/9571732/894160f6-c213-4a23-8057-9e6672c153c2)
 
 This project is a starting point for a Dart
