@@ -52,8 +52,8 @@ List<Map<String, dynamic>> productList = [
 
 ```
 
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github.com/rkumar1904/swipperview/raw/master/assets/1.png)
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 37 26](https://github.com/rkumar1904/swipperview/raw/master/assets/2.png)
+![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github.com/rkumar1904/swipperview/raw/master/assets/1.png?raw=true)
+![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 37 26](https://github.com/rkumar1904/swipperview/raw/master/assets/2.png?raw=true)
 
 This project is a starting point for a Dart
 [package](https://flutter.dev/developing-packages/),
