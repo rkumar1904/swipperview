@@ -52,8 +52,8 @@ List<Map<String, dynamic>> productList = [
 
 ```
 
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github-production-user-asset-6210df.s3.amazonaws.com/9571732/262941275-c9a28add-f487-4488-a38e-42eb7b692d3c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230824T102023Z&X-Amz-Expires=300&X-Amz-Signature=362b4c5322cbc1e58fd4d1f3e95ffae05693eec007a651369ae29a343b81bddb&X-Amz-SignedHeaders=host&actor_id=9571732&key_id=0&repo_id=424918960)
-![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 37 26](https://github-production-user-asset-6210df.s3.amazonaws.com/9571732/262941242-894160f6-c213-4a23-8057-9e6672c153c2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230824T102037Z&X-Amz-Expires=300&X-Amz-Signature=3411789147038f8c37e8637dcee083d738bbf9b62246fc1200e35db925c3db8d&X-Amz-SignedHeaders=host&actor_id=9571732&key_id=0&repo_id=424918960)
+![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 36 56](https://github.com/rkumar1904/swipperview/assets/9571732/c9a28add-f487-4488-a38e-42eb7b692d3c)
+![Simulator Screen Shot - iPhone 11 - 2023-08-24 at 15 37 26](https://github.com/rkumar1904/swipperview/assets/9571732/894160f6-c213-4a23-8057-9e6672c153c2)
 
 This project is a starting point for a Dart
 [package](https://flutter.dev/developing-packages/),
