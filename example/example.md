@@ -1,8 +1,4 @@
-# swipper_example
-
-Example
-
-## Getting Started
+### Getting Started
 
 ```
 import 'package:flutter/material.dart';
