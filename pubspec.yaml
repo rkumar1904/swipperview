@@ -1,6 +1,6 @@
 name: swipperview
-description: a simple swipper
-version: 0.0.2+11
+description: Create dynamic color based on image url, integrate interactive content + img for fluid user experiences.
+version: 0.0.3+13
 homepage: https://github.com/rkumar1904
 
 environment:
